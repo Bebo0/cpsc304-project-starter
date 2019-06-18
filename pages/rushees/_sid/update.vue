@@ -4,12 +4,12 @@
       <div class="subsection">
         <form style="margin: 15px 15px;">
             <div style="margin: 10px 0;">
-              <span class="user-username">Username: </span>
-              <input type="text" :value="user.username" v-model="user.username"></input>
+              <span class="rushee-sid">SID: </span>
+              <input type="text" :value="rushee.sid" v-model="rushee.sid"></input>
             </div>
             <div style="margin: 10px 0;">
-              <span class="user-password">Password: </span>
-              <input type="password" v-model="user.password"></input>
+              <span class="rushee-rid">RID: </span>
+              <input type="rid" v-model="user.rid"></input>
             </div>
         </form>
         <button type="button" class="button--grey" @click="submitUpdate">Update</button>
@@ -23,12 +23,12 @@ import axios from '~/plugins/axios'
 
 export default {
   asyncData ({ params, error }) {
-    return axios.get('/api/users/' + params.username)
+    return axios.get('/api/rushees/' + params.sid)
       .then((res) => {
-        return { user: res.data }
+        return { rushee: res.data }
       })
       .catch((e) => {
-        error({ statusCode: 404, message: 'User not found' })
+        error({ statusCode: 404, message: 'Rushee not found' })
       })
   },
 
@@ -40,16 +40,15 @@ export default {
     submitUpdate () {
       let self = this
 
-      axios.post('/api/users/update', {
+      axios.post('/api/rushees/update', {
         headers:
           {
             'Content-Type': 'application/json'
           },
         data:
           {
-            userid: self.user.userid,
-            username: self.user.username,
-            password: self.user.password
+            sid: self.rushee.sid,
+            rid: self.rushee.rid
           }})
         .then((res) => {
           // res.data should contain the url for redirecting... bad practice
@@ -63,7 +62,7 @@ export default {
 
   head () {
     return {
-      title: `Update User: ${this.user.username}`
+      title: `Update Rushee: ${this.rushee.sid}`
     }
   }
 }

@@ -34,17 +34,39 @@ router.get('/rushees/:sid', function (req, res, next) {
     })
 })
 
+// INSERT
 router.post('/rushees/add', bodyParser.json(), function (req, res, next) {
   const rid = req.body.data.rid
   const sid = req.body.data.sid
 
-  const query = 'INSERT INTO Rushee (sid, rid) VALUES (:sid, :rid) ;'
+  const query = 'INSERT INTO Rushees (sid, rid) VALUES (:sid, :rid) ;'
   connection.query(query,
     {
       type: connection.QueryTypes.INSERT,
       replacements: {
         sid:sid,
         rid: rid 
+      }
+    })
+    .then(result => {
+      // result[1] is the number of rows changed
+      res.send('/rushees')
+    })
+})
+
+
+router.post('/rushees/update', bodyParser.json(), function (req, res, next) {
+  const sid = req.body.data.sid
+  const rid = req.body.data.rid
+
+
+  const query = 'UPDATE Rushees SET sid = :sid, rid = :rid WHERE sid = :sid ;'
+  connection.query(query,
+    {
+      type: connection.QueryTypes.UPDATE,
+      replacements: {
+        sid: sid,
+        rid: rid
       }
     })
     .then(result => {
