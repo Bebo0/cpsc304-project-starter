@@ -11,7 +11,7 @@ const sequelize = new Sequelize(
     pool: {
       max: 10,
       min: 0,
-      idle: 30000
+      idle: 10000
     },
     define: {
       timestamps: false

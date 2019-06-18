@@ -9,7 +9,7 @@
             </div>
             <div style="margin: 10px 0;">
               <span class="rushee-rid">RID: </span>
-              <input type="rid" v-model="user.rid"></input>
+              <input type="rid" v-model="rushee.rid"></input>
             </div>
         </form>
         <button type="button" class="button--grey" @click="submitUpdate">Update</button>
