@@ -7,7 +7,7 @@
           <nuxt-link class="button--grey" style="padding: 5px 20px; text-decoration: none;" to="/rushees/add">Add Rushee</nuxt-link>
         </div>
         <ul style="list-style-type: none; padding: 0; margin: 0;">
-          <li v-for="(rushee, index) in rushee" :key="index" style="padding: 10px 20px; margin: 0 25px; position: relative;">
+          <li v-for="(rushee, index) in rushees" :key="index" style="padding: 10px 20px; margin: 0 25px; position: relative;">
             <nuxt-link :to="{ path: `/rushees/${rushee.sid}`, params: { sid: rushee.sid }}">
               {{ rushee.sid + ' ' + rushee.rid }}
             </nuxt-link>
