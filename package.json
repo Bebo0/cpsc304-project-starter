@@ -13,18 +13,20 @@
   },
   "dependencies": {
     "@nuxtjs/pwa": "^1.0.2",
-    "axios": "^0.16.2",
+    "axios": "^0.19.0",
     "body-parser": "^1.18.2",
-    "cross-env": "^5.0.1",
+    "cross-env": "^5.2.0",
     "express": "^4.15.3",
     "nuxt": "^1.0.0-rc3",
     "pg": "^7.3.0",
     "sequelize": "^4.17.0",
-    "source-map-support": "^0.4.15"
+    "serverless-webpack": "^5.3.1",
+    "source-map-support": "^0.4.15",
+    "webpack": "^4.33.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
-    "backpack-core": "^0.4.1",
+    "backpack-core": "^0.8.3",
     "eslint": "^4.3.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-loader": "^1.9.0",
@@ -34,6 +36,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.1"
+    "stylus-loader": "^3.0.1",
+    "webpack-dev-server": "^3.5.1"
   }
 }

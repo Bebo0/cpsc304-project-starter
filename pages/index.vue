@@ -8,6 +8,9 @@
       <div class="links">
         <nuxt-link class="button--grey link" style="margin-left: 15px;" to="/users">View Users</nuxt-link>
       </div>
+      <div class="links">
+        <nuxt-link class="button--grey link" style="margin-left: 15px;" to="/rushees">View Rushees</nuxt-link>
+      </div>
     </div>
   </section>
 </template>
