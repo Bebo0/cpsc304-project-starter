@@ -2,9 +2,9 @@
   <section class="user-view">
     <div class="content">
       <div class="subsection">
-        <span class="user-username" style="padding: 10px 0 10px 10px; margin: 10px 0 10px 0;">{{ user.username }}</span>
-        <span class="user-password" style="padding: 10px 10px; margin: 10px 0 10px 0;">{{ `(${user.password})` }}</span>
-        <nuxt-link :to="{ path: `/users/${user.username}/update`, params: { username: user.username }}">Update</nuxt-link>
+        <span class="rushee-sid" style="padding: 10px 0 10px 10px; margin: 10px 0 10px 0;">{{ rushee.sid }}</span>
+        <span class="rushee-rid" style="padding: 10px 10px; margin: 10px 0 10px 0;">{{ `(${rushee.rid})` }}</span>
+        <nuxt-link :to="{ path: `/users/${rushee.sid}/update`, params: { sid: rushee.sid }}">Update</nuxt-link>
       </div>
     </div>
   </section>
@@ -14,19 +14,19 @@
 import axios from '~/plugins/axios'
 
 export default {
-  name: 'username',
+  name: 'sid',
   asyncData ({ params, error }) {
-    return axios.get('/api/users/' + params.username)
+    return axios.get('/api/rushees/' + params.sid)
       .then((res) => {
-        return { user: res.data }
+        return { rushee: res.data }
       })
       .catch((e) => {
-        error({ statusCode: 404, message: 'User not found' })
+        error({ statusCode: 404, message: 'Rushee not found' })
       })
   },
   head () {
     return {
-      title: `User: ${this.user.username}`
+      title: `Rushee: ${this.rushee.sid}`
     }
   }
 }
