@@ -8,9 +8,9 @@ const router = Router()
 router.get('/rushees', function (req, res, next) {
   const query = 'SELECT * FROM Rushees;'
   connection.query(query, { type: connection.QueryTypes.SELECT })
-    .then(users => {
-      console.log(users)
-      res.json(users)
+    .then(rushees => {
+      console.log(rushees)
+      res.json(rushees)
     })
 })
 
