@@ -34,7 +34,7 @@ router.get('/rushees/:sid', function (req, res, next) {
     })
 })
 
-router.post('/rushee/add', bodyParser.json(), function (req, res, next) {
+router.post('/rushees/add', bodyParser.json(), function (req, res, next) {
   const rid = req.body.data.rid
   const sid = req.body.data.sid
 
