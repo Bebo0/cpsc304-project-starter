@@ -1,10 +1,10 @@
 <template>
-  <section class="user-view">
+  <section class="rushee-view">
     <div class="content">
       <div class="subsection">
         <span class="rushee-sid" style="padding: 10px 0 10px 10px; margin: 10px 0 10px 0;">{{ rushee.sid }}</span>
         <span class="rushee-rid" style="padding: 10px 10px; margin: 10px 0 10px 0;">{{ `(${rushee.rid})` }}</span>
-        <nuxt-link :to="{ path: `/users/${rushee.sid}/update`, params: { sid: rushee.sid }}">Update</nuxt-link>
+        <nuxt-link :to="{ path: `/rushees/${rushee.sid}/update`, params: { sid: rushee.sid }}">Update</nuxt-link>
       </div>
     </div>
   </section>
@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.user-view
+.rushee-view
   padding-top 0
 
 .content
@@ -52,10 +52,10 @@ export default {
     margin 25px 10px
     font-size 26px
     font-weight 500
-  .user-username
+  .rushee-sid
     font-size 24px
     font-weight 500
-  .user-password
+  .rushee-rid
     font-size 24px
     font-weight 500
     color #707070

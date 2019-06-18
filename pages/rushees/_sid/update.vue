@@ -1,5 +1,5 @@
 <template>
-  <section class="user-view">
+  <section class="rushee-view">
     <div class="content">
       <div class="subsection">
         <form style="margin: 15px 15px;">
@@ -69,7 +69,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.user-view
+.rushee-view
   padding-top 0
 
 .content
@@ -88,11 +88,11 @@ export default {
     margin 25px 10px
     font-size 26px
     font-weight 500
-  .user-username
+  .rushee-sid
     font-size 24px
     font-weight 500
     color #707070
-  .user-password
+  .rushee-rid
     font-size 24px
     font-weight 500
     color #707070
